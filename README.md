@@ -1,1 +1,1 @@
-# Arduino Robot Arm Project
+# BicepBoost: Exoskeleton arm for bicep rehab
