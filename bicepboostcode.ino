@@ -43,19 +43,19 @@ void joystick(){
   bValue = jt_button.getState();
 
   while(750<yValue && yValue<1050){
-    Serial.println("Up Y");
+    //Serial.println("Up Y");
     driveUp();
     yValue = analogRead(VRY_PIN);
-    //limitSwitch();
+    limitSwitch();
   }
   stopMotor();
 
   while(-50<yValue && yValue<150){
-    Serial.println("Down Y");
+    //Serial.println("Down Y");
     Serial.print(pwm);
     driveDown();
     yValue = analogRead(VRY_PIN);
-    //limitSwitch();
+    limitSwitch();
   }
   stopMotor();
   
@@ -111,7 +111,7 @@ void limitSwitch(){
   int lowerState = lower_limit.getState();
 
   if(upperState == 0){
-    Serial.print("GO DOWN");
+    //Serial.print("GO DOWN");
     stopMotor();
     delay(10);
     driveDown();
@@ -119,7 +119,7 @@ void limitSwitch(){
   }
 
   if(lowerState == 0){
-    Serial.print("GO UP");
+    //Serial.print("GO UP");
     stopMotor();
     delay(10);
     driveUp();
